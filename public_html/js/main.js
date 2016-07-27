@@ -5,13 +5,13 @@ $(function(){
     username = prompt("ENTER USERNAME");
 
     $.get('/showChat',function(data,status){
-        $('#chatbox').html('<br><br>');
+        $('#chatbox').html('');
 
         console.log(data);
 
         for(x of data){
 
-            $('#chatbox').append(x.name + ' : ' + x.msg + '<br>');
+            $('#chatbox').prepend(x.name + ' : ' + x.msg + '<br>');
           console.log(x);
         }
 
@@ -25,7 +25,11 @@ $(function(){
             )
    })
 
+    $('#CLEAR').click(function(){
+        
+    });
+
     socket.on('chat',function(data){
-       $('#chatbox').append(data.user + ': ' + data.msg + '<br>');
+       $('#chatbox').prepend(data.user + ': ' + data.msg + '<br>');
     });
 });

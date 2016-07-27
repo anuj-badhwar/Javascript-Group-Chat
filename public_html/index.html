@@ -4,18 +4,43 @@
     <title> CHAT USING SOCKETS!</title>
     <script src="js/jquery.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+
+    <style>
+        body{
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: antiquewhite;
+        }
+
+        #outer{
+            background-color: #fe8c84;
+            padding : 15px;
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 25px;
+            box-shadow: #000000 5px 5px 20px;
+        }
+
+        #chatmessage{
+            width:77%;
+        }
+
+    </style>
 </head>
 
 <body>
 
+<div id = "outer">
     <input type="text" id="chatmessage" >
     <button id="submitchat">SEND</button>
-
+    <button id="CLEAR">CLEAR</button>
+    <br>
     <div id="chatbox">
 
     </div>
+</div>
 
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
