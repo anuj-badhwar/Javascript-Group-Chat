@@ -26,7 +26,9 @@ $(function(){
    })
 
     $('#CLEAR').click(function(){
-        
+        $.get('/clear',function(data,status){
+            $('#chatbox').html('');
+        })
     });
 
     socket.on('chat',function(data){

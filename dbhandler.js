@@ -48,6 +48,16 @@ module.exports = {
 
             cb(chatHist);
         });
+        conn.end();
+    },
+
+    clearHistory : function(){
+        const conn=createConnection();
+        conn.connect();
+
+        conn.query('DELETE FROM chatlist;');
+
+        conn.end();
     }
 
 }

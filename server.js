@@ -18,6 +18,12 @@ app.get('/showChat',function(req,res){
     })
 });
 
+app.get('/clear',function(req,res){
+
+    db.clearHistory();
+    res.end();
+});
+
 //DIFFERENT 'socket' is created on every call
 io.on('connection',function(socket){
    console.log('A user is connected');
